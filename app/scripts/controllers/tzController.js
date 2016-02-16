@@ -1,36 +1,37 @@
 'use strict';
 
 angular.module('kelloprojektiApp')
-    .controller('TzController', function ($scope, LocationService, AjaxFactory) {
-        var x = document.getElementById('demo');
+    .controller('TzController', function ($scope,$interval, LocationService, AjaxFactory) {
+
 
         function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = 'Geolocation is not supported by this browser.';
-            }
+            navigator.geolocation.getCurrentPosition(showPosition);
         }
         getLocation();
 
         function showPosition(position) {
-console.log(position);
+            console.log(position);
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
+//            var lat = -35.3080;
+//            var lng = 149.1245;
             LocationService.setLocation(lat, lng);
-            console.log(LocationService);
 
             $scope.lat = LocationService.latitude;
-            $scope.lng = LocationService.longitude;}
-        var request = AjaxFactory.getTime();
+            $scope.lng = LocationService.longitude;
+            var request = AjaxFactory.getTime(lat, lng);
 
-        request.then(function (response) {
-            console.log(response.data);
-            $scope.timezone = response.data.zoneName;
-        }, function (error) {
-            // tee virheellä jotain
-            console.log(error.data);
-        });
+            request.then(function (response) {
+                console.log(response.data);
+                $scope.timezone = response.data;
+                LocationService.setCountry(response.data.countryCode);
+            }, function (error) {
+                // tee virheellä jotain
+                console.log(error.data);
+            });
+        }
+    
+
 
 
     });

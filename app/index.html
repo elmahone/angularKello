@@ -20,10 +20,16 @@
 
 
     <div class="container" ng-controller="TzController">
-        <div><p>Latitude {{lat}}</p>
-            <p>Longitude {{lng}}</p>
-            <p>Timezone {{tz}}</p>
-        
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="time">{{ (timezone.timestamp) * 1000 | date:'HH:mm:ss' }}</h3>
+                <p class="date">{{ (timezone.timestamp - timezone.gmtOffset) * 1000 | date:'dd.MM.yyyy' }}</p>
+                
+            </div>
+
+        </div>
+        <div class="row" ng-controller="CurrencyController">
+            <p>local currency is {{currency}}</p>
         </div>
     </div>
 
@@ -43,11 +49,12 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/tzController.js"></script>
-    
-    <script src="scripts/services/ajaxFactory.js"></script>
     <script src="scripts/services/locationService.js"></script>
+    <script src="scripts/services/ajaxFactory.js"></script>
+
+    
+    <script src="scripts/controllers/currencyController.js"></script>
+    <script src="scripts/controllers/tzController.js"></script>
     <!-- endbuild -->
 </body>
 
