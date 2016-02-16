@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kelloprojektiApp')
-    .controller('TzController', function ($scope,$interval, LocationService, AjaxFactory) {
+    .controller('TzController', function ($scope, $interval, LocationService, AjaxFactory) {
 
 
         function getLocation() {
@@ -13,24 +13,28 @@ angular.module('kelloprojektiApp')
             console.log(position);
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
-//            var lat = -35.3080;
-//            var lng = 149.1245;
             LocationService.setLocation(lat, lng);
-
-            $scope.lat = LocationService.latitude;
-            $scope.lng = LocationService.longitude;
-            var request = AjaxFactory.getTime(lat, lng);
+            var n = Date.now();
+           $scope.date = n;
+            
+            var request = AjaxFactory.getCountryCode(lat, lng);
 
             request.then(function (response) {
                 console.log(response.data);
-                $scope.timezone = response.data;
+                
+                var timeUpdate = function () {
+                    $scope.timezone = response.data;
+                };
+                
                 LocationService.setCountry(response.data.countryCode);
+                $interval(timeUpdate, 1000);
             }, function (error) {
                 // tee virheellä jotain
                 console.log(error.data);
             });
+
         }
-    
+
 
 
 

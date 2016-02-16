@@ -6,7 +6,7 @@ angular
         var ajaxFunctions = {};
 
 
-        ajaxFunctions.getTime = function (lat, lng) {
+        ajaxFunctions.getCountryCode = function (lat, lng) {
             return $http.get('http://api.timezonedb.com/?lat=' + lat + '&lng=' + lng + '&format=json&key=AH5ELORHDNTT');
         };
     

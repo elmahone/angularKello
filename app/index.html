@@ -22,9 +22,15 @@
     <div class="container" ng-controller="TzController">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h3 class="time">{{ (timezone.timestamp) * 1000 | date:'HH:mm:ss' }}</h3>
-                <p class="date">{{ (timezone.timestamp - timezone.gmtOffset) * 1000 | date:'dd.MM.yyyy' }}</p>
-                
+                <div ng-if="timezone.dst == 0">
+                    <h3 class="time">{{ (timezone.timestamp - timezone.gmtOffset )* 1000   | date:'HH:mm:ss' }}</h3>
+                    <p class="date">{{ (timezone.timestamp - timezone.gmtOffset) * 1000 | date:'dd.MM.yyyy' }}</p>
+                    <p>{{date | date:'HH:mm'}}</p>
+                </div>
+                <div ng-if="timezone.dst == 1">
+                    <h3 class="time">{{ (timezone.timestamp - 3600 )* 1000   | date:'HH:mm:ss' }}</h3>
+                    <p class="date">{{ (timezone.timestamp - timezone.gmtOffset) * 1000 | date:'dd.MM.yyyy' }}</p>
+                </div>
             </div>
 
         </div>
@@ -52,7 +58,7 @@
     <script src="scripts/services/locationService.js"></script>
     <script src="scripts/services/ajaxFactory.js"></script>
 
-    
+
     <script src="scripts/controllers/currencyController.js"></script>
     <script src="scripts/controllers/tzController.js"></script>
     <!-- endbuild -->
