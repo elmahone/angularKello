@@ -12,5 +12,8 @@
             locationData.setCountry = function (countryCode) {
                 this.countryCode = countryCode;
             };
+            locationData.setCurrency = function (currencyCode) {
+                this.currencyCode = currencyCode;   
+            };
             return locationData;
         });

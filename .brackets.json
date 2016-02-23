@@ -1,6 +1,7 @@
 {
     "jscodehints.detectedExclusions": [
         "C:/Users/black/Documents/GitHub/kelloprojekti/bower_components/jquery/src/var/hasOwn.js",
-        "C:/Users/black/Documents/GitHub/kelloprojekti/bower_components/jquery/src/css/support.js"
+        "C:/Users/black/Documents/GitHub/kelloprojekti/bower_components/jquery/src/css/support.js",
+        "C:/Users/black/Documents/GitHub/angularKello/bower_components/jquery/src/var/hasOwn.js"
     ]
 }

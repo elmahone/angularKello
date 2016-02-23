@@ -17,26 +17,51 @@
 </head>
 
 <body ng-app="kelloprojektiApp">
-
-
     <div class="container" ng-controller="TzController">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <div ng-if="timezone.dst == 0">
-                    <h3 class="time">{{ (timezone.timestamp - timezone.gmtOffset )* 1000   | date:'HH:mm:ss' }}</h3>
-                    <p class="date">{{ (timezone.timestamp - timezone.gmtOffset) * 1000 | date:'dd.MM.yyyy' }}</p>
-                    <p>{{date | date:'HH:mm'}}</p>
+        <div id="carousel-example-generic" class="carousel slide" data-interval="false" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"> </li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"> </li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="row">
+                        <div ng-if="dst == 0">
+                            <div class="col-sm-12 text-center">
+                                <h3 class="time">{{ timezone * 1000 | date:'HH:mm' }}</h3>
+                                <p class="date">{{ timezone * 1000 | date:'dd.MM.yyyy' }}</p>
+                            </div>
+                        </div>
+                        <div ng-if="dst == 1">
+                            <div class="col-sm-12 text-center">
+                                <h3 class="time">{{ (timezone + 3600) * 1000 | date:'HH:mm' }}</h3>
+                                <p class="date">{{ (timezone + 3600) * 1000 | date:'dd.MM.yyyy' }}</p>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div ng-if="timezone.dst == 1">
-                    <h3 class="time">{{ (timezone.timestamp - 3600 )* 1000   | date:'HH:mm:ss' }}</h3>
-                    <p class="date">{{ (timezone.timestamp - timezone.gmtOffset) * 1000 | date:'dd.MM.yyyy' }}</p>
+                <div class="item">
+                    <div class="row" ng-controller="CurrencyCodeController">
+                        <div ng-controller="CountCurrencyController" class="text-center">
+                            <input type="number" name="currency" id="input" class="currency" ng-model="money" placeholder="{{currency}}">
+                            <select name="currencies" ng-model="kurssi" autofocus>
+                                <option selected="true" disabled>Choose Currency</option>
+                                <option ng-repeat="(key,val) in rates" ng-value="{{val}}">{{key}}</option>
+                            </select>
+                            <p>{{money * kurssi}}</p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
 
-        </div>
-        <div class="row" ng-controller="CurrencyController">
-            <p>local currency is {{currency}}</p>
-        </div>
+
+
+
+
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -59,7 +84,8 @@
     <script src="scripts/services/ajaxFactory.js"></script>
 
 
-    <script src="scripts/controllers/currencyController.js"></script>
+    <script src="scripts/controllers/countCurrencyController.js"></script>
+    <script src="scripts/controllers/currencyCodeController.js"></script>
     <script src="scripts/controllers/tzController.js"></script>
     <!-- endbuild -->
 </body>
