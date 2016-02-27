@@ -18,52 +18,11 @@
 
 <body ng-app="kelloprojektiApp">
     <div class="container" ng-controller="TzController">
-        <div id="carousel-example-generic" class="carousel slide" data-interval="false" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"> </li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"> </li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="row">
-                        <div ng-if="dst == 0">
-                            <div class="col-sm-12 text-center">
-                                <h3 class="time">{{ timezone * 1000 | date:'HH:mm' }}</h3>
-                                <p class="date">{{ timezone * 1000 | date:'dd.MM.yyyy' }}</p>
-                            </div>
-                        </div>
-                        <div ng-if="dst == 1">
-                            <div class="col-sm-12 text-center">
-                                <h3 class="time">{{ (timezone + 3600) * 1000 | date:'HH:mm' }}</h3>
-                                <p class="date">{{ (timezone + 3600) * 1000 | date:'dd.MM.yyyy' }}</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row" ng-controller="CurrencyCodeController">
-                        <div ng-controller="CountCurrencyController" class="text-center">
-                            <input type="number" name="currency" id="input" class="currency" ng-model="money" placeholder="{{currency}}">
-                            <select name="currencies" ng-model="kurssi" autofocus>
-                                <option selected="true" disabled>Choose Currency</option>
-                                <option ng-repeat="(key,val) in rates" ng-value="{{val}}">{{key}}</option>
-                            </select>
-                            <p>{{money * kurssi}}</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-
-
-
-
-
+        <app-carousel></app-carousel>
     </div>
 
+    
+    
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -85,8 +44,14 @@
 
 
     <script src="scripts/controllers/countCurrencyController.js"></script>
+    <script src="scripts/controllers/classController.js"></script>
+    <script src="scripts/controllers/weatherController.js"></script>
     <script src="scripts/controllers/currencyCodeController.js"></script>
     <script src="scripts/controllers/tzController.js"></script>
+
+    <script src="scripts/directives/timezone.js"></script>
+    <script src="scripts/directives/currency.js"></script>
+    <script src="scripts/directives/appCarousel.js"></script>
     <!-- endbuild -->
 </body>
 

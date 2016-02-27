@@ -15,5 +15,8 @@
             locationData.setCurrency = function (currencyCode) {
                 this.currencyCode = currencyCode;   
             };
+        
+        console.log(locationData);
             return locationData;
-        });
+    
+    });

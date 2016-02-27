@@ -19,6 +19,7 @@ angular.module('kelloprojektiApp')
             }, function (error) {
                 // tee virheellä jotain
                 console.log(error.data);
+                
             });
         });
 

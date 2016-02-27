@@ -1,0 +1,25 @@
+<div id="carousel-example-generic" class="carousel slide" data-interval="false" data-ride="carousel">
+    <div class="row">
+        <div class="carousel-buttons">
+            <div class="col-xs-6 tab" ng-class="{ active: classCtrl.isSet(1) }" ng-click="classCtrl.setClass(1)" data-target="#carousel-example-generic" data-slide-to="0"><span class="glyphicon glyphicon-time"></span></div>
+            <div class="col-xs-6 tab" ng-class="{ active: classCtrl.isSet(2) }" ng-click="classCtrl.setClass(2)" data-target="#carousel-example-generic" data-slide-to="1">
+                <span class="glyphicon glyphicon-usd"></span>
+                <span class="glyphicon glyphicon-transfer"></span>
+                <span class="glyphicon glyphicon-euro"></span>
+            </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="carousel-inner">
+            <div class="item active">
+                <timezone></timezone>
+            </div>
+            <div class="item">
+                <currency></currency>
+            </div>
+        </div>
+    </div>
+</div>
