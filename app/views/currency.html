@@ -1,14 +1,15 @@
 <div class="row" ng-controller="CurrencyCodeController">
     <div ng-controller="CountCurrencyController" class="currency-slide text-center">
-        <input type="number" name="currency" id="input" class="currency" ng-model="money" placeholder="{{currency}}">
-        <select name="currencies" ng-model="kurssi">
+        <p>Rates updated {{updated}}</p>
+        <input type="number" name="currency" id="input" class="currency" ng-model="money" placeholder="{{currency}}" >
 
-            <option ng-repeat="(key,val) in rates" ng-value="{{val}}">{{key}}</option>
+        <select name="currencies" ng-model="kurssi" ng-change="vaihdaKurssi(kurssi)">
+            <option ng-repeat="(key,val) in rates" ng-value="{{val+0}}">{{key}}</option>
         </select>
-        <p>{{money + 0}} {{currency}} = {{money * kurssi | number:3}}</p>
-        <hr>
-        <p>1 {{currency}} = {{1*kurssi}} </p>
-    </div>
-    
 
+        <div ng-hide="piilota" class="comparecur"> {{money * kurssi + 0 | number:3}} {{valinta}}</div>
+
+        <hr>
+        <p ng-hide="piilota">1 {{currency}} = {{1*kurssi+0}} {{valinta}}</p>
+    </div>
 </div>

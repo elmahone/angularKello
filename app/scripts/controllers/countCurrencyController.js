@@ -2,7 +2,22 @@
 
 angular.module('kelloprojektiApp')
     .controller('CountCurrencyController', function ($scope, LocationService, AjaxFactory) {
-    
+        $scope.piilota = true;
+//        $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
+//            //you also get the actual event object
+//            //do stuff, execute functions -- whatever...
+//            console.log(ngRepeatFinishedEvent);
+//            //            $scope.valinta = angular.element('option')[1].innerHTML;
+//            //            $scope.kurssi = angular.element('option')[1].value;
+//            //            angular.element('option')[0].remove();
+//            console.log(angular.element('option')[1].innerHTML);
+//        });
+        $scope.vaihdaKurssi = function (kurssi) {
+            $scope.valinta = angular.element('option:selected').html();
+            $scope.piilota = false;
+
+        };
+
         function valuutta() {
             $scope.currency = LocationService.currencyCode;
         }
@@ -17,7 +32,7 @@ angular.module('kelloprojektiApp')
             request.then(function (response) {
                 console.log(response.data);
                 $scope.rates = response.data.rates;
-
+                $scope.updated = response.data.date;
 
             }, function (error) {
                 // tee virheellä jotain
