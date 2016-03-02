@@ -13,6 +13,7 @@ angular.module('kelloprojektiApp')
 //            console.log(angular.element('option')[1].innerHTML);
 //        });
         $scope.vaihdaKurssi = function (kurssi) {
+            console.log(kurssi);
             $scope.valinta = angular.element('option:selected').html();
             $scope.piilota = false;
 
@@ -24,13 +25,11 @@ angular.module('kelloprojektiApp')
         $scope.$watch(function () {
             return LocationService.currencyCode;
         }, function (newValue) {
-            console.log(newValue);
             if (newValue === undefined) {
                 return;
             }
             var request = AjaxFactory.getCurrency(newValue);
             request.then(function (response) {
-                console.log(response.data);
                 $scope.rates = response.data.rates;
                 $scope.updated = response.data.date;
 
@@ -39,10 +38,9 @@ angular.module('kelloprojektiApp')
                 console.log(error.data);
                 LocationService.setCurrency('EUR');
                 $('.currency-slide').each(function () {
-                    alert("Could not find local currency. Changing to EUR");
+                    alert('Could not find local currency. Changing to EUR');
                 });
                 valuutta();
-                console.log(LocationService);
 
 
             });

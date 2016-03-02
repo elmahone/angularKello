@@ -2,20 +2,28 @@
     <div ng-if="dst == 0">
         <div ng-controller="WeatherController">
             <div class="col-sm-12 text-center time-slide">
+                <div class="row"><img class="icon pull-left" ng-src="http://openweathermap.org/img/w/{{icon}}.png">
+                    <p class="city pull-right">{{city}}, {{country}}</p>
+                </div>
+                <div class="row">
+                    <p class="weather pull-right">{{temp | number:1}}&#8451;</p>
+                </div>
                 <h3 class="time">{{ timezone * 1000 | date:'HH:mm' }}</h3>
-                <p class="date">{{ timezone * 1000 | date:'dd.MM.yyyy' }}</p>
-                <p>Tempreature in {{city}}: {{temp | number:1}}&#8451;</p>
-                
-                <img ng-src="http://openweathermap.org/img/w/{{icon}}.png">
+                <p class="date">{{ timezone * 1000 | date:'MMMM d' }}</p>
             </div>
         </div>
     </div>
     <div ng-if="dst == 1">
         <div ng-controller="WeatherController">
             <div class="col-sm-12 text-center time-slide">
-                <h3 class="time">{{ (timezone + 3600) * 1000 | date:'HH:mm' }}</h3>
-                <p class="date">{{ (timezone + 3600) * 1000 | date:'dd.MM.yyyy' }}</p>
-                <p>Tempreature in {{city}}: {{temp | number:1}}&#8451;</p>
+                <div class="row"><img class="icon pull-left" ng-src="http://openweathermap.org/img/w/{{icon}}.png">
+                    <p class="city pull-right">{{city}}, {{country}}</p>
+                </div>
+                <div class="row">
+                    <p class="weather pull-right">{{temp | number:1}}&#8451;</p>
+                </div>
+                <h3 class="time">{{ timezone * 1000 + 3600 | date:'HH:mm' }}</h3>
+                <p class="date">{{ timezone * 1000 + 3600 | date:'MMMM d' }}</p>
             </div>
         </div>
     </div>

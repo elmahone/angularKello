@@ -11,7 +11,6 @@ angular
         };
 
         ajaxFunctions.getCountryInfo = function (code) {
-            console.log(code);
             return $http.get('https://restcountries.eu/rest/v1/alpha/' + code);
         };
 
@@ -20,6 +19,9 @@ angular
         };
         ajaxFunctions.getWeather = function () {
             return $http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + LocationService.latitude + '&lon=' + LocationService.longitude + '&units=metric&APPID=96d06d9fc0fc3b685624810b34922966');
+        };
+        ajaxFunctions.getFiveDayWeather = function () {
+            return $http.get('http://api.openweathermap.org/data/2.5/forecast?lat=' + LocationService.latitude + '&lon='+LocationService.longitude+ '&units=metric&APPID=96d06d9fc0fc3b685624810b34922966');
         };
         return ajaxFunctions;
     });

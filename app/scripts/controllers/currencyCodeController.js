@@ -6,7 +6,6 @@ angular.module('kelloprojektiApp')
         $scope.$watch(function () {
             return LocationService.countryCode;
         }, function (newValue) {
-            console.log(newValue);
             if (newValue === undefined) {
                 return;
             }
@@ -15,7 +14,6 @@ angular.module('kelloprojektiApp')
                 console.log(response.data);
                 $scope.currency = response.data.currencies[0];
                 LocationService.setCurrency($scope.currency);
-                console.log(LocationService.currencyCode);
             }, function (error) {
                 // tee virheellä jotain
                 console.log(error.data);

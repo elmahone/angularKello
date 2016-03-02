@@ -18,7 +18,6 @@ angular.module('kelloprojektiApp')
         getLocation();
 
         function showPosition(position) {
-            console.log(position);
 
             //NIGERIA TULEE ERROR VALUUTAN kANSSA
             //var lat = 8.9319365;
@@ -42,6 +41,7 @@ angular.module('kelloprojektiApp')
                 // -7200 koska tietokoneen kello on +2h
                 $scope.timezone = response.data.timestamp - 7200;
                 $scope.dst = response.data.dst;
+                $scope.country = response.data.countryCode;
                 timer = window.setInterval(kello, 1000);
 
 

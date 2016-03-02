@@ -2,152 +2,318 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-.row {
-    margin: 0;
-}
 
-.container {
-    height: 390px;
-    width: 319px;
-    padding: 0;
-}
-
-.time {
-    font-family: 'Tw Cen MT', sans-serif;
-    font-size: 80pt;
-    color: white;
-    text-shadow: -1px 0 #196CFF, 0 1px #196CFF, 1px 0 #196CFF, 0 -1px #196CFF;
-}
-
-.date {
-    font-family: 'Tw Cen MT', sans-serif;
-    color: white;
-    margin-top: -15px;
-    font-size: 24pt;
-    text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
-}
-
-.carousel {
-    height: 100%;
-}
-
-.carousel-control.right {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
-}
-
-.time-slide {
-    height: 340px;
-}
-
-.currency-slide {
-    padding-top: 2em;
-    height: 340px;
-    background-color: lightgray;
-}
-
-.currency {
-    display: inline;
-    width: 66%;
-    padding: 6px 12px;
-    font-size: 25px;
-    height: 50px;
-    line-height: 1.428571429;
-    margin: auto;
-    color: #000;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #fff;
-    border-radius: 0;
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
-
-
-
-.comparecur {
-    display: inline-block;
-    width: 99%;
-    margin-top: 1px;
-    padding: 6px 12px;
-    height: 50px;
-    background-color: #fff;
-    font-size: 25px;
-    line-height: 1.428571429;
-}
-.collapse.in {
-    display: inline-block;
-}
-
-select {
-    margin-left: -4px;
-    width: 33%;
-    height: 50px;
-    padding: 6px 12px;
-    font-size: 25px;
-    line-height: 1.428571429;
-    color: #fff;
-    background-color: #196CFF;
-    background-image: none;
-    border: 1px solid #196CFF;
-    border-radius: 0;
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
-
-.carousel-buttons {
-    //    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 50px;
-    font-size: 30px;
-    background-color: white;
-    color: #196CFF;
-    text-align: center;
-}
-
-.carousel-buttons .tab {
-    width: 50%;
-    height: 100%;
-    padding-top: 7px;
-    cursor: pointer;
-    border-bottom: 1px solid #196CFF;
-}
-
-.tab.active {
-    background-color: #196CFF;
-    color: white;
-}
-
-//.carousel-indicators {
-//    position: absolute;
-//    top: 0px;
-//    left: 0%;
-//    z-index: 15;
-//    width: 100%;
-//    margin-left: 0;
-//    padding-left: 0;
-//    list-style: none;
-//    text-align: center;
-//    color: #fff;
+//@media screen and (max-width: 320px){
+    .row {
+        margin: 0;
+    }
+    .container {
+        width: 320px;
+        height: 100%;
+        padding: 0;
+    }
+    .time {
+        margin-top: 0;
+        font-family: 'Tw Cen MT', sans-serif;
+        font-size: 90pt;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+    .date {
+        font-family: 'Tw Cen MT', sans-serif;
+        color: white;
+        margin-top: -30px;
+        padding-left: 150px;
+        font-size: 24pt;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+    .weather {
+        font-family: 'Tw Cen MT', sans-serif;
+        margin-top: -22px;
+        display: inline;
+        color: white;
+        font-size: 30pt;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+    .city {
+        font-family: 'Tw Cen MT', sans-serif;
+        display: inline;
+        color: white;
+        font-size: 20pt;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+    .icon {
+        display: inline;
+        width: auto;
+        height: 20%;
+        margin-top: -8px;
+        margin-left: -10px;
+    }
+    .carousel {
+        height: 100%;
+    }
+    .carousel-control.right {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+    .time-slide {
+        height: 340px;
+    }
+    .currency-slide {
+        height: 340px;
+        background-color: lightgray;
+    }
+    .currency {
+        display: inline;
+        width: 66%;
+        padding: 6px 12px;
+        font-size: 29px;
+        height: 64px;
+        line-height: 1.428571429;
+        margin: auto;
+        color: #000;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #fff;
+        border-radius: 0;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+    .row .top {
+        background-color: #196CFF;
+        height: 75%;
+    }
+    .row .bottom {
+        background-color: white;
+        height: 25%;
+        -webkit-box-shadow: inset 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: inset 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+        box-shadow: inset 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+    }
+    .row .bottom .content {
+        padding-top: 6%;
+    }
+    .comparecur {
+        display: inline-block;
+        width: 99%;
+        margin-top: 0px;
+        padding: 6px 12px;
+        min-height: 50px;
+        background-color: #fff;
+        font-size: 29px;
+        line-height: 1.428571429;
+        border-radius: 0 0 5px 5px;
+    }
+    
+    select {
+        margin-top: 3em;
+        margin-left: -4px;
+        width: 33%;
+        height: 67px;
+        padding: 6px 12px;
+        font-size: 25px;
+        line-height: 1.428571429;
+        color: #fff;
+        background-color: black;
+        border: 1px solid black;
+        background-image: none;
+        border-radius: 0;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+    .carousel-buttons {
+        //    position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 50px;
+        font-size: 30px;
+        background-color: white;
+        color: #196CFF;
+        text-align: center;
+    }
+    .carousel-buttons .tab {
+        width: 33.3333%;
+        height: 100%;
+        border-right: 1px solid #196CFF;
+        border-left: 1px solid #196CFF;
+        padding-top: 7px;
+        cursor: pointer;
+        border-bottom: 1px solid #196CFF;
+    }
+    .tab.active {
+        background-color: #196CFF;
+        color: white;
+    }
+    
 //}
-//
-//.carousel-indicators li {
-//    display: inline-block;
-//    width: 50%;
-//    height: 27px;
-//    margin: 0px;
-//    text-indent: 0px;
-//    border: 0px solid #fff;
-//    border-radius: 0px;
-//    cursor: pointer;
-//    background-color: #000;
-//    background-color: transparent;
-//}
-//
-//.carousel-indicators .active {
-//    margin-left: -4px;
-//    width: 50%;
-//    height: 27px;
-//    background-color: #196CFF;
-//}
-a:hover {
-    text-decoration: none;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-device-width: 42mm) and (min-device-width: 38mm) {
+    .row {
+        margin: 0;
+    }
+    .container {
+        height: 390px;
+        width: 319px;
+        padding: 0;
+    }
+    .time {
+        margin-top: 0;
+        font-family: 'Tw Cen MT', sans-serif;
+        font-size: 90pt;
+        color: white;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+    .date {
+        font-family: 'Tw Cen MT', sans-serif;
+        color: white;
+        margin-top: -30px;
+        padding-left: 150px;
+        font-size: 24pt;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+    .weather {
+        font-family: 'Tw Cen MT', sans-serif;
+        margin-top: -22px;
+        display: inline;
+        color: white;
+        font-size: 30pt;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+    .city {
+        font-family: 'Tw Cen MT', sans-serif;
+        display: inline;
+        color: white;
+        font-size: 20pt;
+        text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+    }
+    .icon {
+        display: inline;
+        width: auto;
+        height: 20%;
+        margin-top: -8px;
+        margin-left: -10px;
+    }
+    .carousel {
+        height: 100%;
+    }
+    .carousel-control.right {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+    .time-slide {
+        height: 340px;
+    }
+    .currency-slide {
+        height: 340px;
+        background-color: lightgray;
+    }
+    .currency {
+        display: inline;
+        width: 66%;
+        padding: 6px 12px;
+        font-size: 29px;
+        height: 64px;
+        line-height: 1.428571429;
+        margin: auto;
+        color: #000;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #fff;
+        border-radius: 0;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+    .row .top {
+        background-color: #196CFF;
+        height: 75%;
+    }
+    .row .bottom {
+        background-color: white;
+        height: 25%;
+        -webkit-box-shadow: inset 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: inset 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+        box-shadow: inset 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+    }
+    .row .bottom .content {
+        padding-top: 6%;
+    }
+    .comparecur {
+        display: inline-block;
+        width: 99%;
+        margin-top: 0px;
+        padding: 6px 12px;
+        min-height: 50px;
+        background-color: #fff;
+        font-size: 29px;
+        line-height: 1.428571429;
+        border-radius: 0 0 5px 5px;
+    }
+    .collapse.in {
+        display: inline-block;
+    }
+    select {
+        margin-top: 3em;
+        margin-left: -4px;
+        width: 33%;
+        height: 67px;
+        padding: 6px 12px;
+        font-size: 25px;
+        line-height: 1.428571429;
+        color: #fff;
+        background-color: black;
+        border: 1px solid black;
+        background-image: none;
+        border-radius: 0;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+    .carousel-buttons {
+        //    position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 50px;
+        font-size: 30px;
+        background-color: white;
+        color: #196CFF;
+        text-align: center;
+    }
+    .carousel-buttons .tab {
+        width: 50%;
+        height: 100%;
+        padding-top: 7px;
+        cursor: pointer;
+        border-bottom: 1px solid #196CFF;
+    }
+    .tab.active {
+        background-color: #196CFF;
+        color: white;
+    }
 }

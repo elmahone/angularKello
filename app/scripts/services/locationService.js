@@ -16,7 +16,6 @@
                 this.currencyCode = currencyCode;   
             };
         
-        console.log(locationData);
             return locationData;
     
     });
