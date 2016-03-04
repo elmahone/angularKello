@@ -1,6 +1,9 @@
 <div class="row" ng-controller="CurrencyCodeController">
     <div ng-controller="CountCurrencyController" class="currency-slide text-center">
+
         <div class="row top">
+            <h2 class="text-center">Currency Converter</h2>
+            <hr>
             <input type="number" name="currency" id="input" class="currency" ng-model="money" placeholder="{{currency}}">
 
             <select name="currencies" ng-model="kurssi" ng-change="vaihdaKurssi(kurssi)">

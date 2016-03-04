@@ -6,8 +6,8 @@
         <img class="fore-img" ng-src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png">
         <p class="fore-desc"><i>{{item.weather[0].description}}</i></p>
         
-        <p ng-if="item.main.temp < 0.1" class="fore-temp pull-right blue" >{{item.main.temp | number:1}}&#8451;</p>
-        <p ng-if="item.main.temp < 15 && item.main.temp > 0.1 " class="fore-temp pull-right" >{{item.main.temp | number:1}}&#8451;</p>
+        <p ng-if="item.main.temp < 0" class="fore-temp pull-right blue" >{{item.main.temp | number:1}}&#8451;</p>
+        <p ng-if="item.main.temp < 15 && item.main.temp >= 0 " class="fore-temp pull-right" >{{item.main.temp | number:1}}&#8451;</p>
         <p ng-if="item.main.temp > 15" class="fore-temp pull-right red" >{{item.main.temp | number:1}}&#8451;</p>
 
         <hr>

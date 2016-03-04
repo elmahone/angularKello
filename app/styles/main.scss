@@ -11,7 +11,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     min-width: 320px;
     max-width: 50em;
     padding: 0;
-    
 }
 
 .time {
@@ -26,7 +25,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     font-family: 'Tw Cen MT', sans-serif;
     color: white;
     margin-top: -30px;
-    
     padding-left: 105px;
     font-size: 24pt;
     text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
@@ -65,14 +63,25 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-.time-slide, .currency-slide, {
+.time-slide,
+.currency-slide,
+{
     height: 590px;
-    overflow:hidden;
+    overflow: hidden;
+    font-family: 'Tw Cen MT', sans-serif;
 }
+
+.currency-slide h2 {
+    color: white;
+}
+
+.currency-slide hr {
+    border-top: 1px solid #fff;
+}
+
 .weather-slide {
     height: 590px;
-    overflow:auto;
-    
+    overflow: auto;
     font-family: 'Tw Cen MT', sans-serif;
 }
 
@@ -106,7 +115,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 .row .bottom .content {
-//    padding-top: 6%;
+    //    padding-top: 6%;
+    font-size: 20pt;
+}
+
+.row .bottom .content p {
+    margin: 5px 0 30px;
 }
 
 .comparecur {
@@ -160,74 +174,61 @@ select {
     background-color: #196CFF;
     color: white;
 }
-.forecast{
+
+.forecast {
     padding-top: 10px;
     background-color: #fff;
     font-family: 'Tw Cen MT', sans-serif;
-    
 }
-.forecast:hover{
-    background-color: rgb(246,246,246);
+
+.forecast:hover {
+    background-color: rgb(246, 246, 246);
     font-family: 'Tw Cen MT', sans-serif;
-    
 }
+
 hr {
     margin-top: 3px;
     margin-bottom: 0;
 }
-.fore-date, .fore-img, .fore-temp, .fore-desc{
+
+.fore-date,
+.fore-img,
+.fore-temp,
+.fore-desc {
     display: inline-block;
-    
     font-size: 15pt;
 }
-.fore-img{
-    margin-top: -10px;
 
+.fore-img {
+    margin-top: -10px;
 }
-.fore-date{
+
+.fore-date {
     text-transform: uppercase;
 }
+
 .fore-desc {
-    color: rgb(111,111,111);
-    
+    color: rgb(111, 111, 111);
     text-transform: capitalize;
 }
+
 .fore-temp {
     font-size: 17pt;
     text-align: right;
     padding-right: 10px;
 }
+
 .glyphicon {
     max-width: 22%;
 }
 
-
-
 .blue {
     color: #196CFF;
 }
+
 .red {
     color: #FF3F00;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //@media (max-device-width: 42mm) and (min-device-width: 38mm) {
 //    .row {
