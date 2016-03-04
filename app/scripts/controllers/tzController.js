@@ -20,16 +20,16 @@ angular.module('kelloprojektiApp')
         function showPosition(position) {
 
             //NIGERIA TULEE ERROR VALUUTAN kANSSA
-            //var lat = 8.9319365;
-            //var lng = 8.4382574;
+            var lat = 8.9319365;
+            var lng = 8.4382574;
 
             //MOSKOVA
             //var lat = 55.7485171;
             //var lng = 37.07212;
 
 
-            var lat = position.coords.latitude;
-            var lng = position.coords.longitude;
+//            var lat = position.coords.latitude;
+//            var lng = position.coords.longitude;
 
             LocationService.setLocation(lat, lng);
 

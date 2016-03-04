@@ -45,7 +45,5 @@ angular.module('kelloprojektiApp')
 
             });
 
-
-
         });
     });

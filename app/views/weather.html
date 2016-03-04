@@ -2,8 +2,10 @@
     <h2>5 day forecast</h2>
     <div class="forecast text-center" ng-repeat="item in list">
         <img class="icon pull-left" ng-src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png">
-        <p class="pull-left">{{item.main.temp | number:1}}&#8451;</p>
-        <p>{{item.dt * 1000 | date:'HH:mm MMMM dd' }}</p>
+        <h1 class="pull-left">{{item.main.temp | number:1}}&#8451;</h1>
+        
+        <p class="text-right">{{item.dt * 1000 | date:'HH:mm' }}</p>
+        <p class="text-right">{{item.dt * 1000 | date:'MMMM dd' }}</p>
         <hr>
     </div>
 </div>
