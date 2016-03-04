@@ -8,8 +8,16 @@
                 <div class="row">
                     <p class="weather pull-right">{{temp | number:1}}&#8451;</p>
                 </div>
-                <h3 class="time">{{ timezone * 1000 | date:'HH:mm' }}</h3>
-                <p class="date">{{ timezone * 1000 | date:'MMMM d' }}</p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="time">{{ timezone * 1000 | date:'HH:mm' }}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="date">{{ timezone * 1000 | date:'EEE, MMMM d' }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -22,8 +30,16 @@
                 <div class="row">
                     <p class="weather pull-right">{{temp | number:1}}&#8451;</p>
                 </div>
-                <h3 class="time">{{ timezone * 1000 + 3600 | date:'HH:mm' }}</h3>
-                <p class="date">{{ timezone * 1000 + 3600 | date:'MMMM d' }}</p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="time">{{ timezone * 1000 + 3600 | date:'HH:mm' }}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="date">{{ timezone * 1000 + 3600 | date:'EEE, MMMM d' }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

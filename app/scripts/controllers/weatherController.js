@@ -33,6 +33,11 @@ angular.module('kelloprojektiApp')
                 $('.time-slide').css('background-image', 'url(images/broken-clouds.jpg)');
                 $('.time-slide').css('background-size', 'cover');
             }
+            else if(weather==='overcast clouds'){
+                
+                $('.time-slide').css('background-image', 'url(images/broken-clouds.jpg)');
+                $('.time-slide').css('background-size', 'cover');
+            }
             else if(weather==='shower rain'){
                 
                 $('.time-slide').css('background-image', 'url(images/shower-rain.jpg)');
@@ -46,17 +51,21 @@ angular.module('kelloprojektiApp')
             else if(weather==='thunderstorm'){
                 
                 $('.time-slide').css('background-image', 'url(images/thunderstorm.jpg)');
+                $('.time-slide').css('background-size', 'cover');
             }
             else if(weather==='snow'){
                 
                 $('.time-slide').css('background-image', 'url(images/snow.jpg)');
+                $('.time-slide').css('background-size', 'cover');
             }
             else if(weather==='mist'){
                 
                 $('.time-slide').css('background-image', 'url(images/mist.jpg)');
+                $('.time-slide').css('background-size', 'cover');
             }
             else{
                 console.log('404');
+                console.log(weather);
             }
             
             
