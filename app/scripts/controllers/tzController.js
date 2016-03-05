@@ -12,6 +12,9 @@ angular.module('kelloprojektiApp')
         var timer = null;
 
 
+
+
+
         function getLocation() {
             navigator.geolocation.getCurrentPosition(showPosition);
         }
@@ -21,16 +24,16 @@ angular.module('kelloprojektiApp')
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
 
-            LocationService.setLocation(lat, lng);
 
-//            //NIGERIA TULEE ERROR VALUUTAN kANSSA
-//            var lat = 8.9319365;
-//            var lng = 8.4382574;
+            //NIGERIA TULEE ERROR VALUUTAN kANSSA
+            //var lat = 8.9319365;
+            //var lng = 8.4382574;
 
             //MOSKOVA
             //var lat = 55.7485171;
             //var lng = 37.07212;
 
+            LocationService.setLocation(lat, lng);
 
 
 

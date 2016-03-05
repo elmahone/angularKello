@@ -189,6 +189,7 @@ select {
 hr {
     margin-top: 3px;
     margin-bottom: 0;
+    border-top: 1px solid #DFDFDF;
 }
 
 .fore-date,
@@ -205,6 +206,7 @@ hr {
 
 .fore-date {
     text-transform: uppercase;
+    padding-left: 5px;
 }
 
 .fore-desc {
@@ -228,6 +230,11 @@ hr {
 
 .red {
     color: #FF3F00;
+}
+
+.details img {
+    height: auto;
+    width: 20px;
 }
 
 //@media (max-device-width: 42mm) and (min-device-width: 38mm) {

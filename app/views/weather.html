@@ -1,15 +1,52 @@
 <div class="row weather-slide" ng-controller="FiveDayWeatherController">
     <h2 class="text-center">5 Day Forecast</h2>
     <hr>
-    <div class="forecast" ng-repeat="item in list">
-        <p class="fore-date"><b>{{item.dt * 1000 | date:'EEE, HH:mm' }}</b></p>
-        <img class="fore-img" ng-src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png">
-        <p class="fore-desc"><i>{{item.weather[0].description}}</i></p>
-        
-        <p ng-if="item.main.temp < 0" class="fore-temp pull-right blue" >{{item.main.temp | number:1}}&#8451;</p>
-        <p ng-if="item.main.temp < 15 && item.main.temp >= 0 " class="fore-temp pull-right" >{{item.main.temp | number:1}}&#8451;</p>
-        <p ng-if="item.main.temp > 15" class="fore-temp pull-right red" >{{item.main.temp | number:1}}&#8451;</p>
+    <div class="forecast collapsed" data-toggle="collapse" data-target="#details{{ $index + 1 }}" ng-repeat="item in list">
+        <div class="row">
+            <p class="fore-date"><b>{{item.dt * 1000 | date:'EEE, HH:mm' }}</b></p>
+            <img class="fore-img" ng-src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png">
+            <p class="fore-desc"><i>{{item.weather[0].description}}</i></p>
 
+            <p ng-if="item.main.temp < 0" class="fore-temp pull-right blue">{{item.main.temp | number:1}}&#8451;</p>
+            <p ng-if="item.main.temp < 15 && item.main.temp >= 0.01 " class="fore-temp pull-right">{{item.main.temp | number:1}}&#8451;</p>
+            <p ng-if="item.main.temp > 15" class="fore-temp pull-right red">{{item.main.temp | number:1}}&#8451;</p>
+        </div>
+        <div class="row text-center">
+            
+            <span class="glyphicon glyphicon-chevron-down" style="color:rgb(111, 111, 111);"></span>
+        </div>
+        <div id="details{{ $index + 1 }}" class="collapse details">
+            <div class="row">
+                <div class="col-xs-2 text-center">
+                    <p><b>WIND</b></p>
+                    <img src="../images/arrow.png" style="transform:rotate({{item.wind.deg}}deg)" />
+                    <p>{{item.wind.speed}} m/s</p>
+                </div>
+
+                <div class="col-xs-3 text-center">
+                    <p><b>HUMIDITY</b></p>
+                    <p>{{item.main.humidity}}%</p>
+                </div>
+                <div class="col-xs-3 text-center">
+                    <p><b>PRESSURE</b></p>
+                    <p>{{item.main.pressure}} hPa </p>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <p><b>CLOUDS</b></p>
+                    <p>{{item.clouds.all}}%</p>
+                </div>
+
+                <div class="col-xs-2 text-center">
+                    <p><b>TEMP +/-</b></p>
+                    <p>{{item.main.temp_max | number:1}}&#8451;</p>
+                    <p>{{item.main.temp_min | number:1}}&#8451;</p>
+                </div>
+
+
+
+
+            </div>
+        </div>
         <hr>
     </div>
 </div>
