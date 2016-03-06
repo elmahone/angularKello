@@ -12,6 +12,7 @@ angular.module('kelloprojektiApp')
             var weather = response.data.weather[0].description;
             $scope.icon = response.data.weather[0].icon;
             
+            
             if(weather==='clear sky'){
                 $('.time-slide').css('background-image', 'url(images/clear-sky.jpg)');
                 $('.time-slide').css('background-size', 'cover');

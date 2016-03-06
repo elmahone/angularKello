@@ -33,6 +33,10 @@ angular.module('kelloprojektiApp')
             //var lat = 55.7485171;
             //var lng = 37.07212;
 
+            //Sydney
+            //var lat = -33.7960362;
+            //var lng = 150.6422538;
+
             LocationService.setLocation(lat, lng);
 
 
@@ -46,9 +50,10 @@ angular.module('kelloprojektiApp')
                 $scope.dst = response.data.dst;
                 $scope.country = response.data.countryCode;
                 timer = window.setInterval(kello, 1000);
-
+                var offset = Number(response.data.gmtOffset);
 
                 LocationService.setCountry(response.data.countryCode);
+                LocationService.setOffset(offset);
             }, function (error) {
                 // tee virheellä jotain
                 console.log(error.data);

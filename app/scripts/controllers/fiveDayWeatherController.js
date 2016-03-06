@@ -3,7 +3,7 @@
 angular.module('kelloprojektiApp')
     .controller('FiveDayWeatherController', function ($scope, LocationService, AjaxFactory) {
         $scope.$watch(function () {
-            return LocationService.latitude;
+            return LocationService.offset;
         }, function (newValue) {
             if (newValue === undefined) {
                 return;
@@ -12,7 +12,8 @@ angular.module('kelloprojektiApp')
 
             request.then(function (response) {
                     console.log(response.data);
-
+                    $scope.offset = LocationService.offset;
+                    console.log($scope.offset);
                     $scope.list = response.data.list;
 
                 },

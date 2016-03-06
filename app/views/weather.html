@@ -3,7 +3,7 @@
     <hr>
     <div class="forecast collapsed" data-toggle="collapse" data-target="#details{{ $index + 1 }}" ng-repeat="item in list">
         <div class="row">
-            <p class="fore-date"><b>{{item.dt * 1000 | date:'EEE, HH:mm' }}</b></p>
+            <p class="fore-date"><b>{{((item.dt - 7200) + offset) * 1000 | date:'EEE, HH:mm' }}</b></p>
             <img class="fore-img" ng-src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png">
             <p class="fore-desc"><i>{{item.weather[0].description}}</i></p>
 

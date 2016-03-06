@@ -13,9 +13,12 @@
                 this.countryCode = countryCode;
             };
             locationData.setCurrency = function (currencyCode) {
-                this.currencyCode = currencyCode;   
+                this.currencyCode = currencyCode;
             };
-        
+            locationData.setOffset = function (offset) {
+                this.offset = offset;
+            };
+
             return locationData;
-    
-    });
+
+        });
