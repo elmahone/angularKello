@@ -10,7 +10,7 @@
                 <option ng-repeat="(key,val) in rates" ng-value="{{val+0}}">{{key}}</option>
             </select>
 
-            <div ng-hide="piilota" class="comparecur"> {{money * kurssi + 0 | number:3}} {{valinta}}</div>
+            <div ng-hide="piilota" class="comparecur"><span class="local">{{money}} {{currency}} = </span>{{money * kurssi + 0 | number:3}} {{valinta}}</div>
         </div>
 
         <div class="row bottom">

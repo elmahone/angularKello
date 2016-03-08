@@ -79,6 +79,11 @@ angular.module('kelloprojektiApp')
                 $('.time-slide').css('background-image', 'url(images/mist.jpg)');
                 $('.time-slide').css('background-size', 'cover');
             }
+            else if(weather==='fog'){
+                
+                $('.time-slide').css('background-image', 'url(images/mist.jpg)');
+                $('.time-slide').css('background-size', 'cover');
+            }
             else{
                 console.log('404');
                 console.log(weather);
