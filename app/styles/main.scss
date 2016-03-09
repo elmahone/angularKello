@@ -254,14 +254,10 @@ hr {
     .time {
         font-size: 6.2em;
     }
-    .date {
-    }
-    .weather {
-    }
-    .city {
-    }
-    .icon {
-    }
+    .date {}
+    .weather {}
+    .city {}
+    .icon {}
     .carousel {
         height: 100%;
     }
@@ -286,7 +282,7 @@ hr {
         font-size: 22px;
         height: 60px;
     }
-    .local{
+    .local {
         display: none;
     }
     .row .top {
@@ -325,6 +321,9 @@ hr {
         background-image: none;
         border-radius: 0;
         transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
     .carousel-buttons {
         //    position: absolute;

@@ -3,7 +3,7 @@
 angular.module('kelloprojektiApp')
     .controller('TzController', function ($scope, LocationService, AjaxFactory) {
         var aika = 0;
-
+        var goOn = false;
         function kello() {
             aika = +1;
             $scope.timezone = $scope.timezone + aika;
@@ -54,6 +54,8 @@ angular.module('kelloprojektiApp')
 
                 LocationService.setCountry(response.data.countryCode);
                 LocationService.setOffset(offset);
+                goOn = true;
+                LocationService.goOn(goOn);
             }, function (error) {
                 // tee virheellä jotain
                 console.log(error.data);

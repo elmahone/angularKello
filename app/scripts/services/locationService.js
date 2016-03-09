@@ -18,7 +18,9 @@
             locationData.setOffset = function (offset) {
                 this.offset = offset;
             };
-
+            locationData.goOn = function (go) {
+                this.goOn = go;
+            };
             return locationData;
 
         });

@@ -15,7 +15,7 @@ angular
         };
 
         ajaxFunctions.getCurrency = function (currency) {
-            return $http.get('http://api.fixer.io/latest?base=' + currency);
+            return $http.get('http://api.fixer.io/latest?=base' + currency);
         };
         ajaxFunctions.getWeather = function () {
             return $http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + LocationService.latitude + '&lon=' + LocationService.longitude + '&units=metric&APPID=96d06d9fc0fc3b685624810b34922966');
